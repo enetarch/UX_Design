@@ -1,0 +1,16 @@
+div.scroll-table > div > table > tbody td { min-width: 22px; max-width: 22px; } /* blank */
+div.scroll-table > div > table > tbody td + td { min-width: 90px; max-width: 90px; } /* catagory */
+div.scroll-table > div > table > tbody td + td + td { min-width: 61px; max-width: 61px; } /* total */
+div.scroll-table > div > table > tbody td + td + td + td { min-width: 61px; max-width: 61px; } /* at risk */
+div.scroll-table > div > table > tbody td + td + td + td + td { min-width: 69px; max-width: 69px; } /* past due */
+div.scroll-table > div > table > tbody td + td + td + td + td + td { min-width: 72px; max-width: 72px; } /* max age */
+div.scroll-table > div > table > tbody td + td + td + td + td + td + td { min-width: 22px; max-width: 22px; } /* blank */
+
+div.scroll-table > div > table > thead td { min-width: 22px; max-width: 22px; }
+div.scroll-table > div > table > thead td + td { min-width: 90px; max-width: 90px; }
+div.scroll-table > div > table > thead td + td + td { min-width: 61px; max-width: 61px; }
+div.scroll-table > div > table > thead td + td + td + td { min-width: 61px; max-width: 61px; }
+div.scroll-table > div > table > thead td + td + td + td + td { min-width: 69px; max-width: 69px; }
+div.scroll-table > div > table > thead td + td + td + td + td + td { min-width: 72px; max-width: 79px; }
+div.scroll-table > div > table > thead td + td + td + td + td + td + td { min-width: 22px; max-width: 22px; }
+

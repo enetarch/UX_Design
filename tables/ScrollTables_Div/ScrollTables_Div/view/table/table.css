@@ -1,0 +1,132 @@
+div.table
+{
+    display: table;
+    table-layout: fixed;
+}
+div.caption
+{
+    display: table-caption;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+}
+div.th
+{
+    display: table-row;
+    font-weight: bold;
+    text-align: center;
+}
+div.tr
+{
+    display: table-row;
+    padding: 1px, 1px, 1px, 1px;
+    
+}
+div.td
+{
+    display: table-cell;
+    border: solid;
+    border-width: thin;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin: 2px, 2px, 2px, 2px;
+}
+
+
+
+
+div.table > div.tr.lite_line 
+{
+    background-color: #00FF00;
+}
+div.table > div.tr.lite_line 
+{
+    background-color: #00FF00;
+}
+div.table > div.tr.dark_line 
+{
+    background-color: #009900;
+}
+div.table > div.tr:hover 
+{
+    background-color: #009999;
+}
+div.table > div.tr.selected
+{
+    background-color: #999900;
+}
+
+div.table > div.tr > div.td
+{
+    white-space: nowrap;
+}
+
+div.table > div.tr.thead > div.td.issortable
+{
+    /* background-image: url('images/right-arrow.gif'); */
+}
+
+div.table > div.tr.thead > div.td.issortable > input[type="checkbox"]#sortColumn
+{
+    background-image: url('../../images/right-arrow.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 1px solid black;
+    height: 30px;
+    width: 30px;
+    padding-left: 18px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+div.table > div.tr.thead > div.td.issortable > input[type="checkbox"]:checked#sortColumn
+{
+    background: url('../../images/down-arrow.png') no-repeat;    
+}
+
+div.table > div.tr.thead > div.td.issortable > input[type="checkbox"]:checked#sortColumn.SORT_DESC
+{
+    background: url('../../images/up-arrow.png') no-repeat;    
+}
+
+div.table > div.tr.thead > div.td.ishidable > input[type="checkbox"]#hideColumn
+{
+    background: url('../../images/delete-image.jpeg') no-repeat;
+    border: 1px solid black;
+    height: 30px;
+    width: 30px;
+    padding-left: 18px;
+    -webkit-appearance: none;
+}
+
+div.table > div.tr.thead > div.td > input[type="checkbox"]#selectallRows
+{
+    background: none no-repeat;
+    border: 1px solid black;
+    height: 30px;
+    width: 30px;
+    padding-left: 18px;
+    -webkit-appearance: none;
+}
+
+div.table > div.tr.thead > div.td > input[type="checkbox"]#selectallRows:checked
+{
+    background: url('../../images/checkmark.jpeg') no-repeat; 
+}
+
+div.table > div.tr.tbody > div.td > input[type="checkbox"]#selectRow
+{
+    background: none no-repeat;
+    border: 1px solid black;
+    height: 30px;
+    width: 30px;
+    padding-left: 18px;
+    -webkit-appearance: none;
+}
+
+div.table > div.tr.tbody > div.td > input[type="checkbox"]#selectRow:checked
+{
+    background: url('../../images/checkmark.jpeg') no-repeat; 
+}
+
+

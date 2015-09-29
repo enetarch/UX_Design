@@ -1,0 +1,60 @@
+div.position{
+    padding-top: 51px;
+    padding-left: 51px;
+    position:absolute;
+    top:100px;
+    left:100px;
+    overflow: hidden;
+    border: 2px solid blue;
+}
+
+div.scroll-window {
+    border: 1px solid black;
+    position: relative;
+    width:500px;
+    height:250px;
+    overflow:scroll;
+}
+
+table td {
+    border: 1px solid #FFCC00;
+    height: 44px;
+    background-color: #FFFFCC;
+    white-space: nowrap;
+}
+
+
+/* styling for column headers */
+table.thead tr:first-child {
+    position: absolute;
+    top: 0;
+    left: 57px;
+}
+
+/* remove first cell in top left position */
+table.thead tr:first-child td:first-child {
+    display:none;
+}
+
+table.thead tr:first-child td {
+    position: relative;
+    background: orange;
+}
+
+table.thead tr {
+    position: relative;
+}
+
+
+table.tbody tr td:first-child {
+  background: orange;
+  position: absolute;
+  left: 0px;
+  width: 39px
+}
+
+/* Make white space to the left of table since we broke the row headers out of the table */
+table tr:nth-child(n+2) td:nth-child(2) {
+  margin-left: 48px;
+  display: block;
+}

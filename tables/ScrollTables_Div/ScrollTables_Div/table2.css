@@ -1,0 +1,53 @@
+div.position {
+    position:absolute;
+    top: 100px;
+    left: 100px;
+    overflow: hidden;
+    border: 2px solid blue;
+}
+div.topleft-corner {
+    height: 51px;
+    width: 88px;
+    display: inline-block;
+    /* border: 1px gray solid; */
+    /* background: gray; */
+}
+div.scroll-theader {
+    height: 51px;
+    width: 500px;
+    overflow: hidden;
+    display: inline-block;
+}
+div.scroll-lheader {
+    display: inline-block;
+    height: 250px;
+    overflow: hidden;
+}
+div.scroll-window {
+    display:inline-block;
+    position: relative;
+    width: 500px;
+    height: 250px;
+    overflow: scroll;
+}
+
+table td {
+    /* border: 1px solid #FFCC00; */
+    height: 44px;
+    background-color: #FFFFCC;
+    white-space: nowrap;
+}
+
+table.thead tr:first-child td {
+    position: relative;
+    background: orange;
+}
+
+table.lhead tr td:first-child {
+    position: relative;
+    background: orange;
+}
+
+
+
+

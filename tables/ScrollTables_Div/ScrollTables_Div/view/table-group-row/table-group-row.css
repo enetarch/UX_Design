@@ -1,0 +1,17 @@
+div.table > div.tr.thead > div.td > input[type=checkbox]#hideGroup
+{
+    background-image: url('../../images/down-arrow.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 1px solid black;
+    height: 30px;
+    width: 30px;
+    padding-left: 18px;
+    -webkit-appearance: none;
+}
+
+div.table > div.tr.thead > div.td > input[type=checkbox]:checked#hideGroup
+{
+    background: url('../../images/right-arrow.png') no-repeat;    
+}
+

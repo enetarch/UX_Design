@@ -1,0 +1,105 @@
+<html>
+<head>
+    <title>Table Example</title>
+    <script src="shared/jquery-1.11.1.js"></script>
+    <script src="shared/inheritance.js"></script>
+    <script src="shared/singleton.js"></script>
+    <script src="shared/singleton-field.js"></script>
+    <script src="shared/utilities.js"></script>
+
+    <script src="data/data-utilities.js"></script>
+    <script src="data/orders-summary.json.js"></script>
+    <script src="data/invoice2.json.js"></script>
+
+    <script src="objmodel/ladder-properties.js"></script>
+    <script src="objmodel/ladder-nodes.js"></script>
+    <script src="objmodel/ladder-containers.js"></script>
+    <script src="objmodel/ladder-container.js"></script>
+    <script src="objmodel/ladder-items.js"></script>
+    <script src="objmodel/ladder-item.js"></script>
+    <script src="objmodel/ladder.js"></script>
+    
+    <script src="objmodel/common-address.js"></script>
+    <script src="objmodel/common-name.js"></script>
+    <script src="objmodel/common-contact.js"></script>
+    <script src="objmodel/common-contacts.js"></script>
+    
+    <script src="objmodel/invoice-billing-address.js"></script>
+    <script src="objmodel/invoice-shipping-address.js"></script>
+    
+    <script src="objmodel/payment-method.js"></script>
+    <script src="objmodel/payment.js"></script>
+    
+    <script src="objmodel/shipping.js"></script>
+    
+    <script src="objmodel/invoice-lineitem.js"></script>
+    <script src="objmodel/invoice-lineitems.js"></script>
+    
+    <script src="objmodel/invoice-summary.js"></script>
+    <script src="objmodel/invoice-header.js"></script>
+    
+    <script src="objmodel/invoice.js"></script>
+    <script src="objmodel/invoices.js"></script>
+    
+    <script src="view/component/component.js"></script>
+    <script src="view/table-row/table-row.js"></script>
+    <script src="view/table-group-row/table-group-row.js"></script>
+    <script src="view/summary-table-row/summary-table-row.js"></script>
+    <script src="view/table/table.js"></script>
+    <script src="view/scroll-table/scroll-table.js"></script>
+    
+    <script src="connectors/report-connector.js"></script>
+    <script src="connectors/invoice-summary-report-connector.js"></script>
+    <script src="connectors/invoice-status-report-connector.js"></script>
+    <script src="connectors/invoice-countrygroup-report-connector.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="view/table/table.css">
+    <link rel="stylesheet" type="text/css" href="view/scroll-table/scroll-table.css">
+    <link rel="stylesheet" type="text/css" href="view/table-group-row/table-group-row.css">
+    
+    <script>
+    var objmodel = new Ladder();
+    var json = new jsonTree();
+    objmodel.setState (json);
+    
+    var report = new InvoiceSummaryReportConnector (objmodel, null);
+    var reportStatus = new InvoiceStatusReportConnector (objmodel, null);
+    var reportByCountry = new InvoiceCountryGroupReportConnector ();
+
+    reportStatus.updateReport();
+    reportByCountry.model.Set (reportStatus.report.Get());
+    reportByCountry.updateReport();
+
+    $(document).ready (function () {
+        // var ordersTable = new Table ("body", 
+        var scrollTable = new ScrollTable ( "body",
+        { 
+            isSelectable: true, 
+            data: reportByCountry.report.Get(), 
+//            rowRender: new SummaryTableRow(), 
+
+            rowRender: new TableGroupRow("", {
+                showHeader : true,
+                showGroupHeader : true,
+                groupHidable: true,
+            }),
+
+            useLineBar: true,
+            showRowNo: true,
+            showHeader : true,
+            stickyHeader : true,
+        });
+        // ordersTable.updateView();
+        scrollTable.updateView();
+        
+        // window ["ordersTable"] = ordersTable;
+        window ["scrollTable"] = scrollTable;
+        
+        
+        
+    });
+    </script>
+</head>
+<body>HelloWorld</body>
+
+</html>
